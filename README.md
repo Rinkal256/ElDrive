@@ -1,8 +1,6 @@
 # ElDrive
 
-![Karthik's GitHub Banner](1/Driverless-Cars-41019.jpg)
-
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/karthik-chowdary-9248b9257/)
+![ElDrive logo](pic)
 
 # Hey Everyone 👋
 
