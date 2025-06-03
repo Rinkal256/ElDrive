@@ -1,7 +1,8 @@
 # ElDrive
 
-![ElDrive logo](pic)
+<img src="pic/logo.jpg" alt="ElDrive logo" width="200"/>
 
-# Hey Everyone 👋
+---
+## 🚐 Empowering Rural Mobility for the Elderly
 
-Our goal is to develop an autonomous shuttle service designed specifically for elderly people in rural areas, providing them with safe, accessible, and reliable transportation to improve mobility, independence, and quality of life."
+ElDrive is an innovative autonomous shuttle service designed to serve elderly individuals in rural areas. Our mission is to enhance their mobility and independence by offering a safe, accessible, and reliable mode of transportation - bridging the gap between technology and community care.
