@@ -52,7 +52,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 **Emma Heller**, a 68-year-old retired teacher living alone in Kronach, enjoys visiting her friends and family.
 
-![Emma Heller – Persona](Pictures/Persona.jpg)
+![Emma Heller – Persona](pic/Persona.jpg)
 
 ---
 
