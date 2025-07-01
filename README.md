@@ -1,4 +1,4 @@
-# ElDrive_Main-demo
+# ElDrive_Main
 
 # Introduction
 
@@ -51,7 +51,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 **Emma Heller**, a 68-year-old retired teacher living alone in Kronach, enjoys visiting her friends and family.
 
-![Emma Heller – Persona](pic/Persona U.jpg)
+![Emma Heller – Persona](pic/Persona%20U.jpg)
 
 ---
 
