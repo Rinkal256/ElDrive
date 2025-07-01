@@ -4,7 +4,7 @@
 
 **Eldrive** is an innovative and socially driven team of six members working on an impactful project titled **"Autonomous Shuttle for the Elderly in Rural Bavaria."** Our mission is to support elderly individuals living in the Bavarian countryside who face difficulties in maintaining their mobility and social connections.
 
-We aim to develop an **autonomous, on-demand, door-to-door shuttle service** that empowers elderly people to visit friends, attend appointments, and stay engaged with their community all while preserving their independence and dignity. By combining advanced sensing, planning, and control technologies, Eldrive envisions a future where rural mobility challenges are addressed with cutting-edge autonomous solutions.
+We aim to develop an **autonomous, on-demand, door-to-door shuttle service** that empowers elderly people to visit friends and stay engaged with their community all while preserving their independence and dignity. By combining advanced sensing, planning, and control technologies, Eldrive envisions a future where rural mobility challenges are addressed with cutting-edge autonomous solutions.
 
 ---
 
@@ -26,10 +26,9 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
 - [User Stories (Milestone 2)](#user-stories-milestone-2)
 - [Use Case Scenario](#use-case-scenario)
 - [Architecture](#architecture)
-- [Sequence Diagram](#sequence-diagram)
+- [Block Diagram](#block-diagram)
 - [State Diagram](#state-diagram)
 - [Activity Diagram](#activity-diagram)
-- [Block Diagram](#block-diagram)
 - [Component Responsibilities](#component-responsibilities)
 - [Team Roles and Responsibilities](#team-roles-and-responsibilities)
 - [Repositories Overview](#repositories-overview)
@@ -52,7 +51,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 **Emma Heller**, a 68-year-old retired teacher living alone in Kronach, enjoys visiting her friends and family.
 
-![Emma Heller – Persona](pic/Persona.jpg)
+![Emma Heller – Persona](pic/Persona U.jpg)
 
 ---
 
@@ -61,7 +60,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 An overview of key user journeys to guide the development of our autonomous shuttle service.
 
-![User Story Map](Pictures/User%20Story%20Map.jpg)
+![User Story Map](pic/User%20Story%20Map.jpg)
 
 ---
 
@@ -72,7 +71,7 @@ An overview of key user journeys to guide the development of our autonomous shut
 An outline of our key development phases, visualized through structured planning.
 
 <p align="center">
-  <img src="Pictures/MileStones.png" alt="Milestones" width="900"/>
+  <img src="pic/MileStones.png" alt="Milestones" width="900"/>
 </p>
 
 ### 🧱 Milestone 1: System Design
@@ -104,7 +103,7 @@ In this milestone testing and validation of the system will be done to prepare t
 *(Description to be added soon)*
 
 <p align="center">
-  <img src="Pictures/UseCaseScenarioPlaceholder.png" alt="Use Case Scenario Placeholder" width="600"/>
+  <img src="pic/UseCaseScenarioPlaceholder.png" alt="Use Case Scenario Placeholder" width="600"/>
 </p>
 
 ---
@@ -113,11 +112,32 @@ In this milestone testing and validation of the system will be done to prepare t
 
 The architecture consists of the following diagrams:
 
+- **Block Diagram**
 - **State Diagram**
 - **Activity Diagram**
-- **Block Diagram**
 
 Additionally, the responsibilities of the individual components are also listed here.
+
+---
+## Block Diagram (Sense-Plan-Act Architecture)
+
+The system’s architecture is depicted by the following block diagram, composed of sensors, sense, plan, act, and actuators layers.
+
+- **Sensors Layer:** Provides essential input data via intermediate ROS modules. The YDLIDAR sensor, assisted by the ROS driver, generates a 3D map of the local environment fed into the localization module. The RealSense camera, assisted by ROS2 modules, provides image data for object detection. A V2X receiver enables cooperative driving by sourcing data from nearby infrastructure (CAM, SPATEM, CPM). The map server provides global map data, including road geometry and road signs.
+
+- **Sense Layer:** Processes data from sensors. Localization determines the shuttle’s real-time position. Object detection identifies obstacles and traffic participants. Lane detection helps the shuttle stay centered within lanes, handling complex scenarios like intersections.
+
+- **Plan Layer:** Comprises route planning, trajectory planning, and decision-making. Route planning uses map data and road topology to calculate a global path to the destination. Decision-making determines high-level maneuvers (e.g., halting, overtaking, lane changes) based on real-time driving conditions such as obstacles, traffic laws, and other vehicle behaviors. Trajectory planning generates continuous, time-parameterized paths that minimize jerk, acceleration, deceleration, and steering while following the planned route.
+
+- **Act Layer:** Converts high-level plans into low-level control commands. The trajectory follower within this layer executes motion plans, converting them into control signals such as steering angles (for lateral control) and motor speeds (for longitudinal travel), which directly control the shuttle hardware.
+
+Additionally, the system includes:
+
+- **Application User Interface:** The primary interaction point for users to initiate ride requests, monitor journey status, and receive journey details in real time.
+
+- **Server:** Supports system functions by maintaining user data and communicating user pickup and destination details to the route planning module.
+
+![Sense-Plan-Act Architecture](pic/Sense-Plan-Act%20Architecture%20ElDrive.jpg)
 
 ---
 
@@ -130,7 +150,7 @@ Upon reaching the destination, the shuttle transitions to the **parking state**,
 After this process, the shuttle either returns to the **driving state** to continue its journey to the next stop or, if the final user has deboarded, transitions back to the **parking state**. From there, once securely parked, it enters the **idle state** again.
 
 <p align="center">
-  <img src="Pictures/State%20Diagram.jpg" alt="State Diagram" width="600" height="450">
+  <img src="pic/State%20Diagram.jpg" alt="State Diagram" width="600" height="450">
 </p>
 
 ---
@@ -150,43 +170,20 @@ Once parked at the pick-up or destination, user authorization is completed, and 
 Upon completion of the ride, the shuttle waits for further requests. If a new request is raised, the shuttle sends confirmation and repeats the procedure as described.
 
 <p align="center">
-  <img src="Pictures/Activity%20Diagram.jpg" alt="Activity Diagram">
+  <img src="pic/Activity%20Diagram.jpg" alt="Activity Diagram">
 </p>
 
-
 ---
 
-## Block Diagram (Sense-Plan-Act Architecture)
-
-The system’s architecture is depicted by the following block diagram, composed of sensors, sense, plan, act, and actuators layers.
-
-- **Sensors Layer:** Provides essential input data via intermediate ROS modules. The YDLIDAR sensor, assisted by the ROS driver, generates a 3D map of the local environment fed into the localization module. The RealSense camera, assisted by ROS2 modules, provides image data for object detection. A V2X receiver enables cooperative driving by sourcing data from nearby infrastructure (CAM, SPATEM, CPM). The map server provides global map data, including road geometry and road signs.
-
-- **Sense Layer:** Processes data from sensors. Localization determines the shuttle’s real-time position. Object detection identifies obstacles and traffic participants. Lane detection helps the shuttle stay centered within lanes, handling complex scenarios like intersections.
-
-- **Plan Layer:** Comprises route planning, trajectory planning, and decision-making. Route planning uses map data and road topology to calculate a global path to the destination. Decision-making determines high-level maneuvers (e.g., halting, overtaking, lane changes) based on real-time driving conditions such as obstacles, traffic laws, and other vehicle behaviors. Trajectory planning generates continuous, time-parameterized paths that minimize jerk, acceleration, deceleration, and steering while following the planned route.
-
-- **Act Layer:** Converts high-level plans into low-level control commands. The trajectory follower within this layer executes motion plans, converting them into control signals such as steering angles (for lateral control) and motor speeds (for longitudinal travel), which directly control the shuttle hardware.
-
-Additionally, the system includes:
-
-- **Application User Interface:** The primary interaction point for users to initiate ride requests, monitor journey status, and receive journey details in real time.
-
-- **Server:** Supports system functions by maintaining user data and communicating user pickup and destination details to the route planning module.
-
-![Sense-Plan-Act Architecture](Pictures/Sense-Plan-Act%20Architecture%20ElDrive.jpg)
-
----
 
 ## Component Responsibilities
 
 | Component Name                 | Author                   |
 |-------------------------------|--------------------------|
-| [Trajectory Planning](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
-| [Trajectory Follower](https://gitea.example.com/your-org/trajectory-follower)         | Khadija Mahboob Alam     |
-| [Decision Making](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
-| [Route Planning](https://gitea.example.com/your-org/route-planning)                   | Lingaprasath Nagarajan   |
-| [Lane Detection](https://gitea.example.com/your-org/lane-detection)                   | Lingaprasath Nagarajan   |
+| [V2X receiver](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
+| [Trajectory controller](https://gitea.example.com/your-org/trajectory-follower)         | Khadija Mahboob Alam     |
+| [Decision Maker](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
+| [Path Planner](https://gitea.example.com/your-org/route-planning)                   | Lingaprasath Nagarajan   |
 | [Localization](https://gitea.example.com/your-org/localization)                       | Stanislav Fomin          |
 | [Application User Interface](https://gitea.example.com/your-org/application-ui)       | Karthik Chowdary Nunna   |
 | [Server](https://gitea.example.com/your-org/server)                                 | Karthik Chowdary Nunna   |
