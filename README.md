@@ -184,7 +184,7 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 | [Trajectory controller](https://gitea.example.com/your-org/trajectory-follower)         | Khadija Mahboob Alam     |
 | [Decision Maker](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
 | [Path Planner](https://gitea.example.com/your-org/route-planning)                   | Lingaprasath Nagarajan   |
-| [Localization](https://gitea.example.com/your-org/localization)                       | Stanislav Fomin          |
+| [Localization](https://git.hs-coburg.de/eldrive/Localization)                       | Stanislav Fomin          |
 | [Application User Interface](https://gitea.example.com/your-org/application-ui)       | Karthik Chowdary Nunna   |
 | [Server](https://gitea.example.com/your-org/server)                                 | Karthik Chowdary Nunna   |
 
