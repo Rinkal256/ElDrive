@@ -180,12 +180,12 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 
 | Component Name                 | Author                   |
 |-------------------------------|--------------------------|
-| [V2X receiver](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
+| [V2X Transmitter](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
 | [Trajectory controller](https://gitea.example.com/your-org/trajectory-follower)         | Khadija Mahboob Alam     |
 | [Decision Maker](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
 | [Path Planner](https://gitea.example.com/your-org/route-planning)                   | Lingaprasath Nagarajan   |
 | [Localization](https://git.hs-coburg.de/eldrive/Localization)                       | Stanislav Fomin          |
-| [Application User Interface](https://gitea.example.com/your-org/application-ui)       | Karthik Chowdary Nunna   |
+| [Application User Interface](https://git.hs-coburg.de/eldrive/Application-User-Interface/src/branch/main/README.md)       | Karthik Chowdary Nunna   |
 | [Server](https://gitea.example.com/your-org/server)                                 | Karthik Chowdary Nunna   |
 
 
