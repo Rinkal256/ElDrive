@@ -181,7 +181,7 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 | Component Name                 | Author                   |
 |-------------------------------|--------------------------|
 | [V2X Transmitter](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
-| [Trajectory controller](https://gitea.example.com/your-org/trajectory-follower)         | Khadija Mahboob Alam     |
+| [Trajectory controller](https://git.hs-coburg.de/eldrive/TrajectoryController)        | Khadija Mahboob Alam     |
 | [Decision Maker](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
 | [Path Planner](https://git.hs-coburg.de/eldrive/Path_planner)                   | Lingaprasath Nagarajan   |
 | [Localization](https://git.hs-coburg.de/eldrive/Localization)                       | Stanislav Fomin          |
