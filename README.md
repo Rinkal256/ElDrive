@@ -11,9 +11,8 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
 # Table of Contents
 
 <details>
-<summary>📚 Table of Contents</summary>
+<summary>Table of Contents</summary>
 
-- [Problem Definition](#-problem-definition)
 - [Question Zero](#-question-zero)
 - [Persona](#persona)
 - [Story Map](#story-map)
@@ -37,17 +36,13 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
 
 ---
 
-## 🧩 Problem Definition
-
-## ❓ Question Zero
+## Question Zero
 
 How can we assist the senior citizens who face difficulties visiting their friends and family by providing an autonomous on demand vehicle service that goes door to door in Bavarian countryside?
 
 ---
 
----
-
-## 👵 Persona
+## Persona
 
 **Emma Heller**, a 68-year-old retired teacher living alone in Kronach, enjoys visiting her friends and family.
 
@@ -56,7 +51,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 ---
 
 
-## 🗺️ Story Map
+## Story Map
 
 An overview of key user journeys to guide the development of our autonomous shuttle service.
 
@@ -64,9 +59,7 @@ An overview of key user journeys to guide the development of our autonomous shut
 
 ---
 
----
-
-## 🛤️ Milestones
+## Milestones
 
 An outline of our key development phases, visualized through structured planning.
 
@@ -74,36 +67,43 @@ An outline of our key development phases, visualized through structured planning
   <img src="pic/MileStones.png" alt="Milestones" width="900"/>
 </p>
 
-### 🧱 Milestone 1: System Design
+### Milestone 1: System Design
 **Timeline:** May 2025 &nbsp;&nbsp;|&nbsp;&nbsp; **Module:** 2  
 In this milestone, we developed a user story map and derived user stories based on user and system requirements. Further on we also designed the system architecture according to the Sense-Plan-Act architecture and based on that we were also able to understand and develop components for the architecture, designed an activity and a state diagram which enabled us to develop conceptual knowledge of our project.
 
-### 🛰️ Milestone 2: Sensing and Perception
+### Milestone 2: Sensing and Perception
 **Timeline:** July 2025 &nbsp;&nbsp;|&nbsp;&nbsp; **Module:** 3  
 This milestone focuses on in-depth learning of different components used in our project along with developing the understanding about different state-of-the-art sensor technologies. Furthermore, efforts will be made in learning about sensor calibration and sensor fusion techniques for our project and vehicle connectivity. As a result, this will help in developing an understanding of vehicle-to-everything (V2X) communication systems with respect to shuttle and the environment.
 
-### 📡 Milestone 3: Localization & Communication
+### Milestone 3: Localization & Communication
 **Timeline:** Oct 2025 &nbsp;&nbsp;|&nbsp;&nbsp; **Module:** 4  
 This milestone aims to develop an understanding of different map representations and implementing them in our project. This will be helpful for the localization component of our system. Moreover, with the help of previously learned concepts of sensor fusion techniques, we will be able to implement them along with the established V2X communication.
 
-### 🧭 Milestone 4: Navigation
+### Milestone 4: Navigation
 **Timeline:** Dec 2025 &nbsp;&nbsp;|&nbsp;&nbsp; **Module:** 5  
 This milestone functions towards route and trajectory planning along with localization and mapping. Here we will be integrating all the components of the autonomous shuttle along with implementing path planning algorithms developed in milestone 3. An application user interface will be implemented enabling the users to book the ride with key features efficiently.
 
-### 🚀 Milestone 5: System Test & Product Launch
+### Milestone 5: System Test & Product Launch
 **Timeline:** Feb 2025 &nbsp;&nbsp;|&nbsp;&nbsp; **Module:** 6  
 In this milestone testing and validation of the system will be done to prepare the product prototype for launch. Autonomous shuttle with all the components integrated will go through series of testing and validation under various scenarios completing the verification of the product and all the requirements. After the thorough evaluation, the product will be launched.
 
 ---
 
+##  Use Case 
+*(Description to be added soon)*
+
+<p align="center">
+  <img src="pic/UseCasePlaceholder.png" alt="Use Case Placeholder" width="600"/>
+</p>
+
 ---
 
-## 🎯 Use Case Scenario
+## Scenario
 
 *(Description to be added soon)*
 
 <p align="center">
-  <img src="pic/UseCaseScenarioPlaceholder.png" alt="Use Case Scenario Placeholder" width="600"/>
+  <img src="pic/ScenarioPlaceholder.png" alt="Scenario Placeholder" width="600"/>
 </p>
 
 ---
@@ -180,12 +180,11 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 
 | Component Name                 | Author                   |
 |-------------------------------|--------------------------|
-| [V2X Transmitter](https://gitea.example.com/your-org/trajectory-planning)         | Saniya Eram              |
+| [V2X Transmitter](https://git.hs-coburg.de/eldrive/V2X_Transmitter)         | Saniya Eram              |
 | [Trajectory controller](https://git.hs-coburg.de/eldrive/TrajectoryController)        | Khadija Mahboob Alam     |
-| [Decision Maker](https://gitea.example.com/your-org/decision-making)                 | Rinkal Viradiya          |
+| [Decision Maker](https://git.hs-coburg.de/eldrive/Decision_Maker)                 | Rinkal Viradiya          |
 | [Path Planner](https://git.hs-coburg.de/eldrive/Path_planner)                   | Lingaprasath Nagarajan   |
 | [Localization](https://git.hs-coburg.de/eldrive/Localization)                       | Stanislav Fomin          |
-| [Application User Interface](https://git.hs-coburg.de/eldrive/Application-User-Interface)       | Karthik Chowdary Nunna   |
 | [Server](https://git.hs-coburg.de/eldrive/Server)                                 | Karthik Chowdary Nunna   |
 
 
