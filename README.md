@@ -15,7 +15,7 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
 
 - [Question Zero](#question-zero)
 - [Persona](#persona)
-- [User story map](#user-story-map)
+- [User-story map](#user-story-map)
 - [Milestones](#milestones)
 - [Use Case](#use-case)
 - [Scenario](#scenario)
@@ -23,6 +23,7 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
   - [Block Diagram (Sense-Plan-Act Architecture)](#block-diagram-sense-plan-act-architecture)
   - [State Diagram](#state-diagram)
   - [Activity Diagram](#activity-diagram)
+- [User Interface Concepts](#user-interface-concepts) 
 - [Component Responsibilities](#component-responsibilities)
 - [Team roles and responsibilities](#team-roles-and-responsibilities)
 
@@ -38,7 +39,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 ![Emma Heller – Persona](Persona%20U.jpg)
 
 
-## User Story Map
+## User-story map
 
 An overview of key user journeys to guide the development of our autonomous shuttle service.
 
@@ -135,6 +136,12 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 <p align="center">
   <img src="Activity%20Diagram.jpg" alt="Activity Diagram">
 </p>
+
+## User Interface Concepts
+To access External and Internal User Interfaces use the below links:
+
+- [Extrenal UI](https://git.hs-coburg.de/eldrive/User_Interface_Concepts/src/branch/main/Internal_hmi.md) 
+- [Internal UI](https://git.hs-coburg.de/eldrive/User_Interface_Concepts/src/branch/main/Internal_hmi.md)
 
 
 ## Component Responsibilities
