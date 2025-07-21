@@ -102,9 +102,10 @@ Furthermore, **Server** and **Application UI** components are implemented alongs
 
 The **Actuators layer** expect messages from the act layer to execute commands like steering, acceleration, and braking. Door actuator actuates the opening and closing operations of the door and boarding aid.
 
+To access the Block diagram use the given link: https://miro.com/app/board/uXjVI07JyIQ=/
 
 <p align="center">
-  <img src="Block Diagram.jpg" alt="Block Diagram">
+  <img src="Block_diagram_New.png" alt="Block Diagram">
 </p>
 
 ## State Diagram
@@ -140,7 +141,7 @@ Upon completion of the ride, the shuttle waits for further requests. If a new re
 ## User Interface Concepts
 To access External and Internal User Interfaces use the below links:
 
-- [Extrenal UI](https://git.hs-coburg.de/eldrive/User_Interface_Concepts/src/branch/main/Internal_hmi.md) 
+- [Extrenal UI](https://git.hs-coburg.de/eldrive/User_Interface_Concepts/src/branch/main/External_hmi.md) 
 - [Internal UI](https://git.hs-coburg.de/eldrive/User_Interface_Concepts/src/branch/main/Internal_hmi.md)
 
 
