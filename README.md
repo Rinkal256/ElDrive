@@ -1,36 +1,48 @@
 # ElDriveMain
 
-# Introduction
+## Introduction
 
 **Eldrive** is an innovative and socially driven team of six members working on an impactful project titled **"Autonomous Shuttle for the Elderly in Rural Bavaria."** Our mission is to support elderly individuals living in the Bavarian countryside who face difficulties in maintaining their mobility and social connections.
 
 We aim to develop an **autonomous, on-demand, door-to-door shuttle service** that empowers elderly people to visit friends and family and stay engaged with their community all while preserving their independence and dignity. By combining advanced sensing, planning, and control technologies, Eldrive envisions a future where rural mobility challenges are addressed with cutting-edge autonomous solutions.
 
-# Object detection
+## Object Detection
 
 - [Object detection evaluation](./objectdetection.md)
 
-# Table of Contents
+---
+
+## Table of Contents
 
 
-- [Question Zero](#question-zero)
-- [Persona](#persona)
-- [User-story map](#user-story-map)
-- [Milestones](#milestones)
-- [Use Case](#use-case)
-- [Scenario](#scenario)
+- [ElDriveMain](#eldrivemain)
+  - [Introduction](#introduction)
+  - [Object Detection](#object-detection)
+  - [Table of Contents](#table-of-contents)
+  - [Question Zero](#question-zero)
+  - [Persona](#persona)
+- [Project Management](#project-management)
+  - [User Story Map](#user-story-map)
+  - [Effort Estimation \& Prioritization](#effort-estimation--prioritization)
+  - [Milestones](#milestones)
+  - [Use Case](#use-case)
+  - [Scenario](#scenario)
 - [Architecture](#architecture)
   - [Block Diagram (Sense-Plan-Act Architecture)](#block-diagram-sense-plan-act-architecture)
   - [State Diagram](#state-diagram)
   - [Activity Diagram](#activity-diagram)
-- [User Interface Concepts](#user-interface-concepts) 
-- [Component Responsibilities](#component-responsibilities)
-- [Team roles and responsibilities](#team-roles-and-responsibilities)
+  - [User Interface Concepts](#user-interface-concepts)
+  - [Component Responsibilities](#component-responsibilities)
+  - [Team Roles and Responsibilities](#team-roles-and-responsibilities)
+  - [License](#license)
 
+---
 
 ## Question Zero
 
 How can we assist the senior citizens who face difficulties visiting their friends and family by providing an autonomous on demand vehicle service that goes door to door in Bavarian countryside?
+
+---
 
 ## Persona
 
@@ -38,24 +50,46 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 ![Emma Heller – Persona](Persona%20U.jpg)
 
+---
 
-## User-story map
+# Project Management
 
-An overview of key user journeys to guide the development of our autonomous shuttle service.
+## User Story Map 
 
-![User Story Map](user%20story%20map.png)
+An overview of key user journeys (users stories and acceptance criteria for Module 4) to guide the development of our autonomous shuttle service.
+
+<p align="center">
+  <img src="user_story_map.png" alt="User Story Map" width="900"/>
+</p>
+
+To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
+
+---
+
+## Effort Estimation & Prioritization
+
+Impact vs Effort Estimation plot. Each quadrant describes the order of priority
+
+
+<p align="center">
+  <img src="effort_estimation.png" alt="" width="900"/>
+</p>
+
+To access excel sheet for effort estimation and prioritization please use the given link: https://hscoburgde-my.sharepoint.com/:x:/g/personal/lin4181s_hs-coburg_de/EW6HwFBG5mtDt3IzpJYsP18BwVi8ooWI2riMp9zd-m4URw?e=H1aAQs
 
 ---
 
 ## Milestones
 
-An outline of our key development phases, visualized through structured planning.
+An outline of Milestone 3 which highlights our key development phases, visualized through structured planning.
 
 <p align="center">
-  <img src="Milestone.jpg" alt="Milestones" width="900"/>
+  <img src="Milestone_M4.png" alt="Milestones" width="900"/>
 </p>
 
-##  Use Case 
+To access complete User Milestone please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
+
+## Use Case 
 Emma, a 68-year-old living in rural Kronach, uses the Eldrive application to book a shuttle ride to her daughter’s home in Lichtenfels. She selects a pre-registered ride option, reviews the details, and confirms the booking with her saved credit card, and sees a “Ride Confirmed” message.
 
 ## Scenario
@@ -98,14 +132,17 @@ The **Plan layer** comprehends the environment to identify vehicle state, decide
 
 The **Act layer** comprises a Trajectory Controller, V2X Transmitter, and Access Controller. The Trajectory Controller takes the odometry data from Localization to know the current state of the vehicle (position, orientation, velocity) and another input as the planned path from the Path Planner and passes necessary messages to Ackermann Driver to control vehicle speed, steering angle and braking commands to be executed by the actuator layer. Further on, the Trajectory Controller informs the Decision Maker about the trajectory execution status, if it is completed. The V2X transmitter is expected to transmit a /CAM message that briefs the ego vehicle location in geodetic format, vehicle ID, vehicle length and width to inform the local V2X infrastructure. Access control simply passes Boolean messages to Door actuator, to enable or disable doors and boarding aid.
 
-Furthermore, **Server** and **Application UI** components are implemented alongside the above layers. Server communicates with Application UI to fetch destination details that the user provides. Server interprets data from map server to pass on destination details to path planner in coordinates format. Further, servers share the User booking ID with User authorization to authorize the user and let them board the shuttle.
+Furthermore,the **User Interface (UI)** is a web-based frontend for the **ElDrive Shuttle System** a smart, accessible ride-booking platform designed especially for elderly users.
+
+The UI connects to the ROS 2 backend via **Rosbridge WebSocket**, enabling real-time interaction between users, the server, and system components like the planner and decision maker.The **Server Node** is the central middleware connecting the **User Interface (UI), Path Planner, Decision Maker**, and **User Authorization** components.
+It acts as a **bridge** interpreting messages from the web UI, processing user requests, and publishing commands and updates to the rest of the ROS 2 ecosystem.
 
 The **Actuators layer** expect messages from the act layer to execute commands like steering, acceleration, and braking. Door actuator actuates the opening and closing operations of the door and boarding aid.
 
 To access the Block diagram use the given link: https://miro.com/app/board/uXjVI07JyIQ=/
 
 <p align="center">
-  <img src="Block_diagram_New.png" alt="Block Diagram">
+  <img src="Architecture_V3_M4.jpg" alt="Block Diagram">
 </p>
 
 ## State Diagram
@@ -116,8 +153,10 @@ Upon reaching the destination, the shuttle transitions to the **parking state**,
 
 After this process, the shuttle either returns to the **driving state** to continue its journey to the next stop or, if the final user has deboarded, transitions back to the **parking state**. From there, once securely parked, it enters the **idle state** again.
 
+To follow the traffic rules, the shuttle during **driving state** stops at the signal when traffic ligt turns red (False) and resumes moving forward when traffic light turns back green (True).
+
 <p align="center">
-  <img src="State%20Diagram.jpg" alt="State Diagram" width="600" height="450">
+  <img src="State%20Diagram.png" alt="State Diagram" width="600" height="450">
 </p>
 
 ## Activity Diagram
@@ -147,17 +186,28 @@ To access External and Internal User Interfaces use the below links:
 
 ## Component Responsibilities
 
-| Component Name                | Author                   |
+| Components              | Authors (Responsible for Module 4)                   |
 |-------------------------------|--------------------------|
-| [V2X Transmitter](https://git.hs-coburg.de/eldrive/V2X_Transmitter)            | Saniya Eram              |
+| [Localization](https://git.hs-coburg.de/eldrive/Localization)                  | Stanislav Fomin          |
 | [Trajectory controller](https://git.hs-coburg.de/eldrive/TrajectoryController) | Khadija Mahboob Alam     |
 | [Decision Maker](https://git.hs-coburg.de/eldrive/Decision_Maker)              | Rinkal Viradiya          |
 | [Path Planner](https://git.hs-coburg.de/eldrive/Path_planner)                  | Lingaprasath Nagarajan   |
-| [Localization](https://git.hs-coburg.de/eldrive/Localization)                  | Stanislav Fomin          |
+| [User Interface](https://git.hs-coburg.de/eldrive/User_Interface)                              | Karthik Chowdary Nunna   |
+
+
+
+
+| Other Components                | Author                   |
+|-------------------------------|--------------------------|
+| [V2X Transmitter](https://git.hs-coburg.de/eldrive/V2X_Transmitter)            | Stanislav Fomin             |
+| [Access controller](https://git.hs-coburg.de/eldrive/Access_controller) | Khadija Mahboob Alam     |
+| [Signal Identifier](https://git.hs-coburg.de/eldrive/Signal_identifier)                  | Lingaprasath Nagarajan   |
+| [V2X Receiver](https://git.hs-coburg.de/eldrive/V2X_receiver)                  | Lingaprasath Nagarajan   |
 | [Server](https://git.hs-coburg.de/eldrive/Server)                              | Karthik Chowdary Nunna   |
 
 
-## Team roles and responsibilities
+
+## Team Roles and Responsibilities
 | Team Member              | Roles                  |Responsibilities|
 |--------------------------|------------------------|-----------------------|
 |Stanislav Fomin           | Scrum Master           |Implements agile ceremonies and ensures team integrity|
@@ -165,7 +215,6 @@ To access External and Internal User Interfaces use the below links:
 |Khadija Mahboob Alam      | Defining milestones    | Establishes key milestones and tracks progress|
 |Lingaprasath Nagarajan    | Assessment of team competency |Track improvements over time|
 |Rinkal Viradiya           | Documentation reviewer |Reviews and ensures accuracy of the documentation|
-|Saniya Eram               | Planning deliverables  |Defines deliverables to meet timelines |
 
 ## License
 
