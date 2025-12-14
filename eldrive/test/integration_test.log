@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/kdj/workspace/src/ElDrive/eldrive, configfile: setup.cfg
+plugins: launch-testing-1.0.7, ament-xmllint-0.12.11, ament-lint-0.12.11, ament-pep257-0.12.11, ament-copyright-0.12.11, ament-flake8-0.12.11, launch-testing-ros-0.19.8, cov-3.0.0, colcon-core-0.19.0
+collecting ... collected 7 items
+
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int001_motion_on_valid_inputs PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int002_stop_on_red_signal PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int003_resume_on_green_signal PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int004_stop_on_obstacle PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int005_resume_after_obstacle_cleared PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int006_destination_reached PASSED
+src/ElDrive/eldrive/test/test_integration.py::test_TC_Int007_no_motion_without_inputs PASSED
+
+============================== 7 passed in 54.24s ==============================

@@ -1,0 +1,39 @@
+repositories:
+
+  # Component repositories
+  trajectory_controler:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/TrajectoryController.git
+    version: main
+  localization:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/Localization.git
+    version: main
+  path_planning:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/Path_planner.git
+    version: main
+  obstacle_detection:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/Obstacle_detection.git
+    version: main
+  Decision_Maker:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/Decision_Maker.git
+    version: main
+  Signal_identifier:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/Signal_identifier.git
+    version: main
+  obstacle_filter:
+    type: git
+    url: https://git.hs-coburg.de/eldrive/obstacle_filter.git
+    version: main
+
+
+  # Supporting repositories
+
+  ackermann_msgs:
+    type: git
+    url: git@github.com:ros-drivers/ackermann_msgs.git
+    version: ros2
