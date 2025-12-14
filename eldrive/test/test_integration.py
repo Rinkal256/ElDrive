@@ -61,8 +61,6 @@ def controller_process():
     cmd = ["ros2", "run", "trajectory_controller", "trajectory_controller"]
 
     env = os.environ.copy()
-    # Optional: keep same domain, but don’t force it if you don’t use it
-    # env["ROS_DOMAIN_ID"] = env.get("ROS_DOMAIN_ID", "0")
 
     proc = subprocess.Popen(
         cmd,
