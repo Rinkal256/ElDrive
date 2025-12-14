@@ -59,7 +59,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 An overview of key user journeys (users stories and acceptance criteria for Module 4) to guide the development of our autonomous shuttle service.
 
 <p align="center">
-  <img src="user_story_map.png" alt="User Story Map" width="900"/>
+  <img src="eldrive/resource/images/user_story_map.png" alt="User Story Map" width="900"/>
 </p>
 
 To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
@@ -72,7 +72,7 @@ Impact vs Effort Estimation plot. Each quadrant describes the order of priority
 
 
 <p align="center">
-  <img src="effort_estimation.png" alt="" width="900"/>
+  <img src="eldrive/resource/images/effort_estimation.png" alt="" width="900"/>
 </p>
 
 To access excel sheet for effort estimation and prioritization please use the given link: https://hscoburgde-my.sharepoint.com/:x:/g/personal/lin4181s_hs-coburg_de/EW6HwFBG5mtDt3IzpJYsP18BwVi8ooWI2riMp9zd-m4URw?e=H1aAQs
@@ -84,7 +84,7 @@ To access excel sheet for effort estimation and prioritization please use the gi
 An outline of Milestone 3 which highlights our key development phases, visualized through structured planning.
 
 <p align="center">
-  <img src="Milestone_M4.png" alt="Milestones" width="900"/>
+  <img src="eldrive/resource/images/Milestone_M4.png" alt="Milestones" width="900"/>
 </p>
 
 To access complete User Milestone please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
@@ -108,7 +108,7 @@ Once it arrives, the shuttle locates a suitable parking space and parks safely. 
 
 
 <p align="center">
-  <img src="image.png" alt="Scenario Placeholder" width="600"/>
+  <img src="eldrive/resource/images/image.png" alt="Scenario Placeholder" width="600"/>
 </p>
 
 # Architecture
@@ -142,7 +142,7 @@ The **Actuators layer** expect messages from the act layer to execute commands l
 To access the Block diagram use the given link: https://miro.com/app/board/uXjVI07JyIQ=/
 
 <p align="center">
-  <img src="Architecture_V3_M4.jpg" alt="Block Diagram">
+  <img src="eldrive/resource/images/Architecture_V3_M4.jpg" alt="Block Diagram">
 </p>
 
 ## State Diagram
@@ -156,7 +156,7 @@ After this process, the shuttle either returns to the **driving state** to conti
 To follow the traffic rules, the shuttle during **driving state** stops at the signal when traffic ligt turns red (False) and resumes moving forward when traffic light turns back green (True).
 
 <p align="center">
-  <img src="State%20Diagram.png" alt="State Diagram" width="600" height="450">
+  <img src="eldrive/resource/images/State%20Diagram.png" alt="State Diagram" width="600" height="450">
 </p>
 
 ## Activity Diagram
@@ -174,7 +174,7 @@ Once parked at the pick-up or destination, user authorization is completed, and 
 Upon completion of the ride, the shuttle waits for further requests. If a new request is raised, the shuttle sends confirmation and repeats the procedure as described.
 
 <p align="center">
-  <img src="Activity%20Diagram.jpg" alt="Activity Diagram">
+  <img src="eldrive/resource/images/Activity%20Diagram.jpg" alt="Activity Diagram">
 </p>
 
 ## User Interface Concepts

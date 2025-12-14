@@ -28,7 +28,7 @@ For example, potted plant was placed 1 meter away from the car and the confidenc
 The mean of all the iterations was calculated and depicted in a bar graph format. Herewith attached a figure of the evaluation in bar chart format. X axis represents the object types, meanwhile Y axis represents the confidence score along with each bar represented by a different color that reflects change in distance parameter.  
 
 <p align="center">
-  <img src="Image.jpeg" alt="Evaluation Results 1" width="700" Height="570"/>
+  <img src="eldrive/resource/images/Image.jpeg" alt="Evaluation Results 1" width="700" Height="570"/>
 </p>
 
 The first observation we found was that the object types, mannequin and traffic light were not detected for the criteria 3 meters and 4 meters. So we couldn’t derive a conclusive mean confidence score for both the object types. Overall inclusive confidence score of each object type for object detection evaluation is listed below.  
@@ -39,8 +39,8 @@ Also, there were instances where multiple objects were not detected though it wa
 ## Evaluation Results
 
 <p align="center">
-  <img src="image%20(1).png" alt="Evaluation Results 1" width="600" Height="400"/>
-  <img src="image%20(2).png" alt="Evaluation Results 2" width="600" Height="400"/>
+  <img src="eldrive/resource/images/image%20(1).png" alt="Evaluation Results 1" width="600" Height="400"/>
+  <img src="eldrive/resource/images/image%20(2).png" alt="Evaluation Results 2" width="600" Height="400"/>
 </p>
 
 
