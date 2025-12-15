@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/karthik/Desktop/test
+plugins: ament-pep257-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.11, launch-testing-ros-0.19.12, ament-flake8-0.12.14, ament-lint-0.12.14, ament-copyright-0.12.14, cov-7.0.0, colcon-core-0.20.1
+collecting ... collected 10 items
+
+src/integration_test/scripts/test_server_integration.py::test_SR_int001_valid_login PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int002_invalid_login_empty PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int003_profile_request PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int004_quote_request PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int005_payment_confirm PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int006_trip_confirm_and_boarding_goal PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int007_valid_pose_position_forwarding PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int008_eta_positive_velocity PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int009_stop_index_increment PASSED
+src/integration_test/scripts/test_server_integration.py::test_SR_int010_ride_time_published PASSED
+
+============================= 10 passed in 17.56s ==============================
