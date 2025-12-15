@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/karthik/Desktop/test
+plugins: ament-pep257-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.11, launch-testing-ros-0.19.12, ament-flake8-0.12.14, ament-lint-0.12.14, ament-copyright-0.12.14, cov-7.0.0, colcon-core-0.20.1
+collected 4 items
+
+src/integration_test/scripts/test_user_authorization_pipeline_integration.py . [ 25%]
+...                                                                      [100%]
+
+============================== 4 passed in 10.10s ==============================
