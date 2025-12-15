@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/lingaprasath/eldrive_ws/src/integration_test_pp
+plugins: ament-lint-0.12.14, ament-pep257-0.12.14, ament-xmllint-0.12.14, ament-flake8-0.12.14, launch-testing-ros-0.19.12, launch-testing-1.0.10, ament-copyright-0.12.14, cov-3.0.0, colcon-core-0.20.1
+collecting ... collected 3 items
+
+test_path_planner_integration.py::TestPathPlannerIntegration::test_PP_Int001_path_planning_success 
+=== PP_Int001 START ===
+Precondition: Valid map, odom, and goal available
+Test Step 1: Publish /pathplan_enable = 1
+Expected Result 1a: Path Planner computed a global path 
+Expected Result 1b: /planned_path published 
+=== PP_Int001 END ===
+PASSED
+test_path_planner_integration.py::TestPathPlannerIntegration::test_PP_Int002_no_path_found 
+=== PP_Int002 START ===
+Precondition: Map blocks all feasible routes
+Test Step 1: Publish /pathplan_enable = 1
+Expected Result 1a: No /planned_path published
+Expected Result 1b: 'no path found' warning logged
+=== PP_Int002 END ===
+PASSED
+test_path_planner_integration.py::TestPathPlannerIntegration::test_PP_Int003_single_trigger_only 
+=== PP_Int003 START ===
+Precondition: Valid inputs available
+Test Step 1: Publish /pathplan_enable = 1
+Test Step 2: Publish /pathplan_enable = 1 again
+Expected Result 2a: No additional path published 
+=== PP_Int003 END ===
+PASSED
+
+============================== 3 passed in 9.96s ===============================
