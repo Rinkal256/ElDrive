@@ -48,7 +48,10 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 **Emma Heller**, a 68-year-old retired teacher living alone in Kronach, enjoys visiting her friends and family.
 
-![Emma Heller – Persona](Persona%20U.jpg)
+<p align="center">
+  <img src="eldrive/resource/images/Persona.jpg" alt="User Story Map" width="900"/>
+</p>
+
 
 ---
 
@@ -56,13 +59,13 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 ## User Story Map 
 
-An overview of key user journeys (users stories and acceptance criteria for Module 4) to guide the development of our autonomous shuttle service.
+An overview of key user journeys (users stories and acceptance criteria for Module 5) to guide the development of our autonomous shuttle service.
 
 <p align="center">
-  <img src="eldrive/resource/images/user_story_map.png" alt="User Story Map" width="900"/>
+  <img src="eldrive/resource/images/user_story_map_m5.png" alt="User Story Map" width="900"/>
 </p>
 
-To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
+To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=160540389807
 
 ---
 
@@ -72,7 +75,7 @@ Impact vs Effort Estimation plot. Each quadrant describes the order of priority
 
 
 <p align="center">
-  <img src="eldrive/resource/images/effort_estimation.png" alt="" width="900"/>
+  <img src="eldrive/resource/images/effort_vs_impact_matrix_M5.jpeg" alt="" width="900"/>
 </p>
 
 To access excel sheet for effort estimation and prioritization please use the given link: https://hscoburgde-my.sharepoint.com/:x:/g/personal/lin4181s_hs-coburg_de/EW6HwFBG5mtDt3IzpJYsP18BwVi8ooWI2riMp9zd-m4URw?e=H1aAQs
@@ -81,20 +84,20 @@ To access excel sheet for effort estimation and prioritization please use the gi
 
 ## Milestones
 
-An outline of Milestone 3 which highlights our key development phases, visualized through structured planning.
+An outline of Milestone 4 which highlights our key development phases, visualized through structured planning.
 
 <p align="center">
-  <img src="eldrive/resource/images/Milestone_M4.png" alt="Milestones" width="900"/>
+  <img src="eldrive/resource/images/Milestone4_m5.png" alt="Milestones" width="900"/>
 </p>
 
-To access complete User Milestone please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=492652368701
+To access complete User Milestone please use the given link:  https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=160540389807
 
 ## Use Case 
 Emma, a 68-year-old living in rural Kronach, uses the Eldrive application to book a shuttle ride to her daughter’s home in Lichtenfels. She selects a pre-registered ride option, reviews the details, and confirms the booking with her saved credit card, and sees a “Ride Confirmed” message.
 
 ## Scenario
 
-Emma Heller, a 68-year-old woman living in a rural area of Kronach, wants to visit her daughter in Lichtenfels. She taps her phone’s NFC card, which opens the application, and on the simple page displaying five pre-registered destination details, she selects “Kronach–Lichtenfels.” Then it leads to the payment page. After successful payment, she receives a confirmation message on her phone as “Ride confirmed.” After that, she can track the shuttle’s live location using the tracking page.
+Emma Heller, a 68-year-old woman living in a rural area of Kronach, wants to visit her daughter in Lichtenfels. She taps her phone’s NFC card, which opens the application, and on the simple page displaying four pre-registered destination details, she selects “Kronach–Lichtenfels.” Then it leads to the payment page. After successful payment, she receives a confirmation message on her phone as “Ride confirmed.” After that, she can track the shuttle’s live location using the tracking page.
 
 The autonomous shuttle receives the booking request and departs from its dedicated parking space, taking the shortest route to Emma’s pick-up location. Throughout the ride, it follows all traffic rules and regulations. While driving, the shuttle continuously identifies its location and position using the localization component. The localization component helps the V2X transmitter that publishes Cooperative Awareness Messages (CAM).
 
@@ -108,7 +111,7 @@ Once it arrives, the shuttle locates a suitable parking space and parks safely. 
 
 
 <p align="center">
-  <img src="eldrive/resource/images/image.png" alt="Scenario Placeholder" width="600"/>
+  <img src="eldrive/resource/images/scenario_m5.png" alt="Scenario Placeholder" width="600"/>
 </p>
 
 # Architecture
@@ -130,9 +133,9 @@ The Sense layer consists of Localization that identifies the shuttle’s positio
 
 The **Plan layer** comprehends the environment to identify vehicle state, decides to enable path planning and converts them into refined messages to assist act layer further. The decision maker expects input from door sensor driver to identify shuttle’s state. Object Detection module is supposed to inform Decision Maker of any objects detected on the path, so Decision Maker can be able to identify if it’s an obstacle or not. Decision Maker is the only component that expects input from Trajectory Controller from act layer to identify the shuttle’s state transition and enable or disable Path Planner. Further, access control in act layer is also given Boolean message from Decision Maker to enable or disable the doors and boarding aid. Path Planner expects permission from Decision Maker to plan path by deriving inputs from Localization, to be aware of ego vehicle position. Server provides the destination details; map server provides the local static map and road network information to Path Planner. Based on all these inputs, Path Planner plans a path from shuttle’s current position to the consecutive destinations being provided by the Server and forwards the message to Trajectory Controller on the act layer.
 
-The **Act layer** comprises a Trajectory Controller, V2X Transmitter, and Access Controller. The Trajectory Controller takes the odometry data from Localization to know the current state of the vehicle (position, orientation, velocity) and another input as the planned path from the Path Planner and passes necessary messages to Ackermann Driver to control vehicle speed, steering angle and braking commands to be executed by the actuator layer. Further on, the Trajectory Controller informs the Decision Maker about the trajectory execution status, if it is completed. The V2X transmitter is expected to transmit a /CAM message that briefs the ego vehicle location in geodetic format, vehicle ID, vehicle length and width to inform the local V2X infrastructure. Access control simply passes Boolean messages to Door actuator, to enable or disable doors and boarding aid.
+The **Act layer** comprises a Trajectory Controller, V2X Transmitter, and Access Controller. The Trajectory Controller takes the odometry data from Localization to know the current state of the vehicle (position, orientation, velocity) and another input as the planned path from the Path Planner and passes necessary messages to Ackermann Driver to control vehicle speed, steering angle and braking commands to be executed by the actuator layer. Further on, the Trajectory Controller informs the Decision Maker about the trajectory execution status, if it is completed. The V2X transmitter is expected to transmit a /CAM message that briefs the ego vehicle location in geodetic format, vehicle ID, vehicle length and width to inform the local V2X infrastructure. Access control simply passes Boolean messages to Door actuator, to enable or disable doors and boarding aid. 
 
-Furthermore,the **User Interface (UI)** is a web-based frontend for the **ElDrive Shuttle System** a smart, accessible ride-booking platform designed especially for elderly users.
+Furthermore,the **User Interface (UI)** is a web-based frontend for the **ElDrive Shuttle System** a smart, accessible ride-booking platform designed especially for elderly users. The internal HMI which is also connected to ROS server. 
 
 The UI connects to the ROS 2 backend via **Rosbridge WebSocket**, enabling real-time interaction between users, the server, and system components like the planner and decision maker.The **Server Node** is the central middleware connecting the **User Interface (UI), Path Planner, Decision Maker**, and **User Authorization** components.
 It acts as a **bridge** interpreting messages from the web UI, processing user requests, and publishing commands and updates to the rest of the ROS 2 ecosystem.
@@ -142,7 +145,7 @@ The **Actuators layer** expect messages from the act layer to execute commands l
 To access the Block diagram use the given link: https://miro.com/app/board/uXjVI07JyIQ=/
 
 <p align="center">
-  <img src="eldrive/resource/images/Architecture_V3_M4.jpg" alt="Block Diagram">
+  <img src="eldrive/resource/images/architecture_v5.jpg" alt="Block Diagram">
 </p>
 
 ## State Diagram
@@ -156,7 +159,7 @@ After this process, the shuttle either returns to the **driving state** to conti
 To follow the traffic rules, the shuttle during **driving state** stops at the signal when traffic ligt turns red (False) and resumes moving forward when traffic light turns back green (True).
 
 <p align="center">
-  <img src="eldrive/resource/images/State%20Diagram.png" alt="State Diagram" width="600" height="450">
+  <img src="eldrive/resource/images/state_diagram_M5.jpeg" alt="State Diagram" width="600" height="450">
 </p>
 
 ## Activity Diagram
@@ -189,31 +192,36 @@ To access External and Internal User Interfaces use the below links:
 | Components              | Authors (Responsible for Module 4)                   |
 |-------------------------------|--------------------------|
 | [Localization](https://git.hs-coburg.de/eldrive/Localization)                  | Stanislav Fomin          |
-| [Trajectory controller](https://git.hs-coburg.de/eldrive/TrajectoryController) | Khadija Mahboob Alam     |
+| [Trajectory Controller](https://git.hs-coburg.de/eldrive/TrajectoryController) | Khadija Mahboob Alam     |
 | [Decision Maker](https://git.hs-coburg.de/eldrive/Decision_Maker)              | Rinkal Viradiya          |
 | [Path Planner](https://git.hs-coburg.de/eldrive/Path_planner)                  | Lingaprasath Nagarajan   |
-| [User Interface](https://git.hs-coburg.de/eldrive/User_Interface)                              | Karthik Chowdary Nunna   |
+| [Internal HMI](https://git.hs-coburg.de/eldrive/Internal_User_Interface)                              | Karthik Chowdary Nunna   |
 
 
 
 
-| Other Components                | Author                   |
+| Supporting Components                | Author                   |
 |-------------------------------|--------------------------|
 | [V2X Transmitter](https://git.hs-coburg.de/eldrive/V2X_Transmitter)            | Stanislav Fomin             |
 | [Access controller](https://git.hs-coburg.de/eldrive/Access_controller) | Khadija Mahboob Alam     |
 | [Signal Identifier](https://git.hs-coburg.de/eldrive/Signal_identifier)                  | Lingaprasath Nagarajan   |
 | [V2X Receiver](https://git.hs-coburg.de/eldrive/V2X_receiver)                  | Lingaprasath Nagarajan   |
 | [Server](https://git.hs-coburg.de/eldrive/Server)                              | Karthik Chowdary Nunna   |
+| [User Authorization](https://git.hs-coburg.de/eldrive/User-authorization)                              | Karthik Chowdary Nunna   |
+| [User Interface](https://git.hs-coburg.de/eldrive/User_Interface)                              | Karthik Chowdary Nunna   |
+| [Obstacle Detection](https://git.hs-coburg.de/eldrive/Obstacle_detection)                              | Rinkal Viradiya   |
+| [Obstacle Lane filter](https://git.hs-coburg.de/eldrive/obstacle_lane_filter)                              | Rinkal Viradiya   |
+| [Sensor Fusion](https://git.hs-coburg.de/eldrive/sensor_fusion)                              | Rinkal Viradiya   |
 
 
 
 ## Team Roles and Responsibilities
 | Team Member              | Roles                  |Responsibilities|
 |--------------------------|------------------------|-----------------------|
-|Stanislav Fomin           | Scrum Master           |Implements agile ceremonies and ensures team integrity|
-|Karthik Chowdary Nunna    | Documentation reviewer    |Reviews and ensures accuracy of the documentation|
-|Khadija Mahboob Alam      | Defining milestones    | Establishes key milestones and tracks progress|
-|Lingaprasath Nagarajan    | Assessment of team competency |Track improvements over time|
+|Lingaprasath Nagarajan           | Scrum Master           |Implements agile ceremonies and ensures team integrity|
+|Karthik Chowdary Nunna    | Defining milestones     |stablishes key milestones and tracks progress|
+|Khadija Mahboob Alam      | Documentation reviewer   | Reviews and ensures accuracy of the documentation|
+|Stanislav Fomin    | Assessment of team competency |Track improvements over time|
 |Rinkal Viradiya           | Documentation reviewer |Reviews and ensures accuracy of the documentation|
 
 ## License
