@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/hs-coburg.de/rin7826s/eldrive_ws/test, configfile: pytest.ini
+plugins: launch-testing-1.0.9, ament-lint-0.12.12, launch-testing-ros-0.19.9, ament-xmllint-0.12.12, ament-copyright-0.12.12, ament-pep257-0.12.12, ament-flake8-0.12.12, cov-3.0.0, colcon-core-0.19.0
+collecting ... collected 3 items
+
+test/integration/obstacle_filter/test_obstacle_filter_integration.py::test_OF_Int001_obstacle_with_path_no_tf PASSED [ 33%]
+test/integration/obstacle_filter/test_obstacle_filter_integration.py::test_OF_Int002_obstacle_no_path PASSED [ 66%]
+test/integration/obstacle_filter/test_obstacle_filter_integration.py::test_OF_Int003_repeated_obstacle_stable PASSED [100%]
+
+============================== 3 passed in 0.96s ===============================
