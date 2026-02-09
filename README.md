@@ -22,6 +22,7 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
   - [Question Zero](#question-zero)
   - [Persona](#persona)
 - [Project Management](#project-management)
+  - [Team Features and Responsibilities](#team-features-and-responsibilities)
   - [User Story Map](#user-story-map)
   - [Effort Estimation \& Prioritization](#effort-estimation--prioritization)
   - [Milestones](#milestones)
@@ -33,7 +34,6 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
   - [Activity Diagram](#activity-diagram)
   - [User Interface Concepts](#user-interface-concepts)
   - [Component Responsibilities](#component-responsibilities)
-  - [Team Roles and Responsibilities](#team-roles-and-responsibilities)
   - [License](#license)
 
 ---
@@ -57,19 +57,28 @@ How can we assist the senior citizens who face difficulties visiting their frien
 
 # Project Management
 
+## Team Features and Responsibilities
+| Team Member              |   Feature              | Feature description|
+|--------------------------|------------------------|--------------------|
+|Lingaprasath Nagarajan    | User Authorization for Shuttle Access  |Users can easily access the vehicle using their login ID, and after boarding, they can monitor the ride progress. |
+|Karthik Chowdary Nunna    | Booking a ride from an external Human-Machine interface|Users are provided with a user-friendly external Human-Machine Interface (HMI) that allows them to log in using a unique Login ID or QR code, select pre-saved destinations associated with family members or friends, and securely complete payment to book a ride. |
+|Khadija Mahboob Alam      | Controlled Autonomous Mobility   |The shuttle autonomously transports users by adjusting its speed to road geometry,  slowing on sharp turns, maintaining steady motion on straight segments and comply with infrastructure traffic rules. |
+|Stanislav Fomin    | Robust operations in different areas    | Users can rely on the shuttle to operate robust in environments with limited sensor availability, such as tunnel.|
+|Rinkal Viradiya           | Obstacle Handling  | The shuttle detects obstacles along its planned path and reacts by safely stopping, with support for obstacle avoidance.|
+
 ## User Story Map 
 
-An overview of key user journeys (users stories and acceptance criteria for Module 5) to guide the development of our autonomous shuttle service.
+An overview of key user journeys (users stories and acceptance criteria for Module 6) to guide the development of our autonomous shuttle service.
 
 <p align="center">
-  <img src="eldrive/resource/images/user_story_map_m5.png" alt="User Story Map" width="900"/>
+  <img src="eldrive/resource/images/m6_user_story_map.png" alt="User Story Map" width="900"/>
 </p>
 
-To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=160540389807
+To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVGG8jPt4=/?moveToWidget=3458764658103298781&cot=14
 
 ---
 
-## Effort Estimation & Prioritization
+## Effort Estimation & Prioritization (Module 5)
 
 Impact vs Effort Estimation plot. Each quadrant describes the order of priority
 
@@ -84,34 +93,28 @@ To access excel sheet for effort estimation and prioritization please use the gi
 
 ## Milestones
 
-An outline of Milestone 4 which highlights our key development phases, visualized through structured planning.
+An outline of Milestone 5 which highlights our key development phases, visualized through structured planning.
 
 <p align="center">
-  <img src="eldrive/resource/images/Milestone4_m5.png" alt="Milestones" width="900"/>
+  <img src="eldrive/resource/images/eldrive_milestones.png" alt="Milestones" width="900"/>
 </p>
 
-To access complete User Milestone please use the given link:  https://miro.com/app/board/uXjVJ7KUKCw=/?share_link_id=160540389807
+To access complete User Milestone please use the given link: https://miro.com/app/board/uXjVGG8jPt4=/?moveToWidget=3458764658438685028&cot=14
 
 ## Use Case 
 Emma, a 68-year-old living in rural Kronach, uses the Eldrive application to book a shuttle ride to her daughter’s home in Lichtenfels. She selects a pre-registered ride option, reviews the details, and confirms the booking with her saved credit card, and sees a “Ride Confirmed” message.
 
 ## Scenario
 
-Emma Heller, a 68-year-old woman living in a rural area of Kronach, wants to visit her daughter in Lichtenfels. She taps her phone’s NFC card, which opens the application, and on the simple page displaying four pre-registered destination details, she selects “Kronach–Lichtenfels.” Then it leads to the payment page. After successful payment, she receives a confirmation message on her phone as “Ride confirmed.” After that, she can track the shuttle’s live location using the tracking page.
+Emma Heller, a 68-year-old woman living in a rural area of Kronach, wants to visit her daughter in Würzburg. She taps her phone’s QR-code to open the external Human-machine interface and selects “Kronach–Würzburg” from four pre-registered destinations. After completing the payment, she receives a confirmation message, “Ride confirmed,” and can track the shuttle’s live location.
 
-The autonomous shuttle receives the booking request and departs from its dedicated parking space, taking the shortest route to Emma’s pick-up location. Throughout the ride, it follows all traffic rules and regulations. While driving, the shuttle continuously identifies its location and position using the localization component. The localization component helps the V2X transmitter that publishes Cooperative Awareness Messages (CAM).
+The autonomous shuttle receives the booking request, departs from its dedicated parking space, follows the pre-planned route, passes through a tunnel, and obeys all traffic rules.
 
-The shuttle initially follows a pre-planned route. If any unexpected events occur, it uses V2X communication and object detection inputs to adjust its path, ensuring a smooth and timely arrival. When it reaches Emma’s location, the shuttle finds an available parking space and stops safely so she can board.
-
-After Emma gets in, the shuttle calculates the best route to her daughter’s home. When she takes a seat, there is a Human-Machine Interface (HMI) that greets her with a welcome message. This HMI displays information about the current ride and shows her real-time location. It also includes an entertainment button. Additionally, it provides options to cancel the ride, request help or to trigger an emergency alert if needed.
-
-Along the way, it detects a car involved in an accident blocking the planned route using its object detection module. In response, it automatically replans the route and takes an alternative path to continue the ride.
-
-Once it arrives, the shuttle locates a suitable parking space and parks safely. When Emma exits the vehicle, the shuttle starts searching for the most efficient route back to its dedicated parking area.
+When the shuttle reaches the pick-up location, Emma authorizes boarding using a QR code and enters the vehicle. The onboard Human Machine Interface (HMI) welcomes her and displays route information, real-time location, and the estimated time of arrival (ETA). While passing Neuses, the shuttle detects an obstacle before entering Küps and comes to a complete stop. After the obstacle is cleared, the shuttle resumes its journey, passes Ebensfeld, and reaches the drop-off location in Würzburg. It parks safely, allows Emma to exit, and then returns to its parking area using the most efficient route.
 
 
 <p align="center">
-  <img src="eldrive/resource/images/scenario_m5.png" alt="Scenario Placeholder" width="600"/>
+  <img src="eldrive/resource/images/m6_scenario.png" alt="Scenario Placeholder" width="600"/>
 </p>
 
 # Architecture
@@ -142,10 +145,10 @@ It acts as a **bridge** interpreting messages from the web UI, processing user r
 
 The **Actuators layer** expect messages from the act layer to execute commands like steering, acceleration, and braking. Door actuator actuates the opening and closing operations of the door and boarding aid.
 
-To access the Block diagram use the given link: https://miro.com/app/board/uXjVI07JyIQ=/
+To access the Block diagram use the given link: https://miro.com/app/board/uXjVI4FV3gw=/?moveToWidget=3458764658113644529&cot=14
 
 <p align="center">
-  <img src="eldrive/resource/images/architecture_v5.jpg" alt="Block Diagram">
+  <img src="eldrive/resource/images/architecture_v6.jpg" alt="Block Diagram">
 </p>
 
 ## State Diagram
@@ -212,17 +215,6 @@ To access External and Internal User Interfaces use the below links:
 | [Obstacle Detection](https://git.hs-coburg.de/eldrive/Obstacle_detection)                              | Rinkal Viradiya   |
 | [Obstacle Lane filter](https://git.hs-coburg.de/eldrive/obstacle_lane_filter)                              | Rinkal Viradiya   |
 | [Sensor Fusion](https://git.hs-coburg.de/eldrive/sensor_fusion)                              | Rinkal Viradiya   |
-
-
-
-## Team Roles and Responsibilities
-| Team Member              | Roles                  |Responsibilities|
-|--------------------------|------------------------|-----------------------|
-|Lingaprasath Nagarajan           | Scrum Master           |Implements agile ceremonies and ensures team integrity|
-|Karthik Chowdary Nunna    | Defining milestones     |stablishes key milestones and tracks progress|
-|Khadija Mahboob Alam      | Documentation reviewer   | Reviews and ensures accuracy of the documentation|
-|Stanislav Fomin    | Assessment of team competency |Track improvements over time|
-|Rinkal Viradiya           | Documentation reviewer |Reviews and ensures accuracy of the documentation|
 
 ## License
 
