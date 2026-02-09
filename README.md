@@ -24,7 +24,6 @@ We aim to develop an **autonomous, on-demand, door-to-door shuttle service** tha
 - [Project Management](#project-management)
   - [Team Features and Responsibilities](#team-features-and-responsibilities)
   - [User Story Map](#user-story-map)
-  - [Effort Estimation \& Prioritization](#effort-estimation--prioritization)
   - [Milestones](#milestones)
   - [Use Case](#use-case)
   - [Scenario](#scenario)
@@ -65,7 +64,7 @@ How can we assist the senior citizens who face difficulties visiting their frien
 |Khadija Mahboob Alam      | Controlled Autonomous Mobility   |The shuttle autonomously transports users by adjusting its speed to road geometry,  slowing on sharp turns, maintaining steady motion on straight segments and comply with infrastructure traffic rules. |
 |Stanislav Fomin    | Robust operations in different areas    | Users can rely on the shuttle to operate robust in environments with limited sensor availability, such as tunnel.|
 |Rinkal Viradiya           | Obstacle Handling  | The shuttle detects obstacles along its planned path and reacts by safely stopping, with support for obstacle avoidance.|
-
+---
 ## User Story Map 
 
 An overview of key user journeys (users stories and acceptance criteria for Module 6) to guide the development of our autonomous shuttle service.
@@ -76,18 +75,6 @@ An overview of key user journeys (users stories and acceptance criteria for Modu
 
 To access complete User Story Map please use the given link: https://miro.com/app/board/uXjVGG8jPt4=/?moveToWidget=3458764658103298781&cot=14
 
----
-
-## Effort Estimation & Prioritization (Module 5)
-
-Impact vs Effort Estimation plot. Each quadrant describes the order of priority
-
-
-<p align="center">
-  <img src="eldrive/resource/images/effort_vs_impact_matrix_M5.jpeg" alt="" width="900"/>
-</p>
-
-To access excel sheet for effort estimation and prioritization please use the given link: https://hscoburgde-my.sharepoint.com/:x:/g/personal/lin4181s_hs-coburg_de/EW6HwFBG5mtDt3IzpJYsP18BwVi8ooWI2riMp9zd-m4URw?e=H1aAQs
 
 ---
 
@@ -101,6 +88,7 @@ An outline of Milestone 5 which highlights our key development phases, visualize
 
 To access complete User Milestone please use the given link: https://miro.com/app/board/uXjVGG8jPt4=/?moveToWidget=3458764658438685028&cot=14
 
+---
 ## Use Case 
 Emma, a 68-year-old living in rural Kronach, uses the Eldrive application to book a shuttle ride to her daughter’s home in Lichtenfels. She selects a pre-registered ride option, reviews the details, and confirms the booking with her saved credit card, and sees a “Ride Confirmed” message.
 
@@ -116,6 +104,9 @@ When the shuttle reaches the pick-up location, Emma authorizes boarding using a 
 <p align="center">
   <img src="eldrive/resource/images/m6_scenario.png" alt="Scenario Placeholder" width="600"/>
 </p>
+
+---
+
 
 # Architecture
 
